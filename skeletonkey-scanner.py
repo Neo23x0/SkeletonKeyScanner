@@ -120,19 +120,26 @@ def scanProcesses(rules):
 
 		try:	
 			pid = process.ProcessId
+			name = process.Name
 			cmd = process.CommandLine
 			if not cmd:
-				cmd = "not set"
+				cmd = "N/A"
+			if not name:
+				name = "N/A"
 		except Exception, e:
-			print "Error getting all process information. Did you run the scanner 'As Administrator'?"
+			print Fore.MAGENTA, "Error getting all process information. Did you run the scanner 'As Administrator'?", Fore.WHITE
 			continue
 
-		print Fore.GREEN, "Scanning Process - PID: %s CMD: %s" % ( pid, cmd ), Fore.WHITE
+		if pid == 0 or pid == 4:
+			print Fore.CYAN, "Skipping Process - PID: %s NAME: %s CMD: %s" % ( pid, name, cmd ), Fore.WHITE
+			continue
+
+		print Fore.GREEN, "Scanning Process - PID: %s NAME: %s CMD: %s" % ( pid, name, cmd ), Fore.WHITE
 
 		# Psexec command check
 		# Skeleton Key Malware Process
 		if re.search(r'psexec .* [a-fA-F0-9]{32}', cmd, re.IGNORECASE):
-			print Fore.RED, "\bProcess that looks liks SKELETON KEY psexec execution detected PID: %s CMD: %s" % ( pid, cmd), Fore.WHITE
+			print Fore.RED, "\bProcess that looks liks SKELETON KEY psexec execution detected PID: %s NAME: %s CMD: %s" % ( pid, name, cmd), Fore.WHITE
 			compromised = True
 		
 		# Yara rule match
@@ -140,10 +147,10 @@ def scanProcesses(rules):
 			matches = rules.match(pid=pid)
 			if matches:
 				for match in matches:
-					print Fore.RED, "\bSKELETONKEY Yara Rule MATCH: %s PID: %s CMD:%" % ( match, pid, cmd), Fore.WHITE
+					print Fore.RED, "\bSKELETONKEY Yara Rule MATCH: %s PID: %s NAME: %s CMD:%" % ( match, pid, name, cmd), Fore.WHITE
 					compromised = True			
 		except Exception, e:
-			print "Error while process memory Yara check (maybe the process doesn't exist anymore or access denied)."
+			print Fore.MAGENTA, "Error while process memory Yara check (maybe the process doesn't exist anymore or access denied). PID: %s NAME: %s" % ( pid, name), Fore.WHITE
 
 	return compromised
 
@@ -189,6 +196,7 @@ def printWelcome():
 	print "  "
 	print Back.CYAN, "                                                                    ", Back.BLACK
 	print Fore.WHITE+''+Back.BLACK	
+
 
 # MAIN ################################################################
 if __name__ == '__main__':
