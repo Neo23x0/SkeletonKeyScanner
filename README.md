@@ -4,13 +4,17 @@ Scanner for Skeleton Key Malware
 
 Detection is based on four detection methods:
 
- 1. File Name IOC 
+  1. File Name IOC 
 
- 2. Yara Ruleset
-    http://goo.gl/aAk3lN
+  2. Yara Ruleset
 
- 3. SHA1 hash check
-    Compares known malicious SHA1 hashes with scanned files
+  3. SHA1 hash check
+     Compares known malicious SHA1 hashes with scanned files
+
+  4. Process parameter check
+     Detecting a PsExec.exe with NTLM Hash as parameter (as described in report)
+
+All included IOCs are extracted from [this report](http://goo.gl/aAk3lN).
 
 The Windows binary is compiled with PyInstaller 2.1 and should run as x86 application on both x86 and x64 based systems.
 
