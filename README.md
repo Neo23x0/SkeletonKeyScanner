@@ -45,6 +45,10 @@ If you want to build it yourself:
 
 ![Screen](/screens/skelscan.png?raw=true)
 
+## Notice
+
+IOCs are based on the report by the Dell SecureWorks Counter Threat Unit(TM) (CTU) researchers. Scanner has not been tested on one of the samples. They have not been published as they contain campaign and customer strings.
+
 ## Contact
 
 Profile on Company Homepage
