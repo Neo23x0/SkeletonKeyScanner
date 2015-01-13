@@ -4,15 +4,15 @@ Scanner for Skeleton Key Malware
 
 Detection is based on four detection methods:
 
-  1. File Name IOC 
+    1. File Name IOC 
 
-  2. Yara Ruleset
+    2. Yara Ruleset
 
-  3. SHA1 hash check
-     Compares known malicious SHA1 hashes with scanned files
+    3. SHA1 hash check
+       Compares known malicious SHA1 hashes with scanned files
 
-  4. Process parameter check
-     Detecting a PsExec.exe with NTLM Hash as parameter (as described in report)
+    4. Process parameter check
+       Detecting a PsExec.exe with NTLM Hash as parameter (as described in report)
 
 All included IOCs are extracted from [this report](http://goo.gl/aAk3lN).
 
@@ -24,10 +24,9 @@ No requirements if you use the compiled EXE.
 
 If you want to build it yourself:
 
-- yara : It's recommended to use the most recent version of the compiled packages for Windows (x86) - Download it from here: http://goo.gl/PQjmsf
-- scandir : faster alternative to os.walk()
-- colorama : to color it up
-
+- [yara](http://goo.gl/PQjmsf) : It's recommended to use the most recent version of the compiled packages for Windows (x86) - Download it from here: http://goo.gl/PQjmsf
+- [scandir](https://github.com/benhoyt/scandir) : faster alternative to os.walk()
+- [colorama](https://pypi.python.org/pypi/colorama) : to color it up
 
 ## Usage
 
