@@ -27,21 +27,19 @@ If you want to build it yourself:
 
 ## Usage
 
-´´´
-usage: skeletonkey-scanner.py [-h] [-p path] [--printAll] [--noprocscan]
-                              [--nofilescan] [--dots] [--debug]
+    usage: skeletonkey-scanner.py [-h] [-p path] [--printAll] [--noprocscan]
+                                  [--nofilescan] [--dots] [--debug]
 
-SKELETONKEY Scanner
+    SKELETONKEY Scanner
 
-optional arguments:
-  -h, --help    show this help message and exit
-  -p path       Path to scan
-  --printAll    Print all files that are scanned
-  --noprocscan  Skip the process scan
-  --nofilescan  Skip the file scan
-  --dots        Print a dot for every scanned file to see the progress
-  --debug       Debug output
-´´´
+    optional arguments:
+      -h, --help    show this help message and exit
+      -p path       Path to scan
+      --printAll    Print all files that are scanned
+      --noprocscan  Skip the process scan
+      --nofilescan  Skip the file scan
+      --dots        Print a dot for every scanned file to see the progress
+      --debug       Debug output
 
 ## Screenshots
 
