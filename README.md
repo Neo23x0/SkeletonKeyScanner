@@ -18,7 +18,7 @@ All included IOCs are extracted from [this report](http://goo.gl/aAk3lN).
 
 The Windows binary is compiled with PyInstaller 2.1 and should run as x86 application on both x86 and x64 based systems.
 
-## Antivirus Detections
+## Antivirus - False Positives
 
 The compiled scanner is [falsely detected](https://www.virustotal.com/en/file/7f855a1e66339f00464abe89559b56c6a0559310761af4f22f7d567f8c461226/analysis/1421234417/) as a Virus by McAfee and some other second-class scanners. This may be caused by the fact that the scanner is a compiled python script that implement some file system and process scanning features that are also used in compiled malware code. 
 
