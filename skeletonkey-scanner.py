@@ -147,7 +147,7 @@ def scanProcesses(rules):
 			matches = rules.match(pid=pid)
 			if matches:
 				for match in matches:
-					print Fore.RED, "\bSKELETONKEY Yara Rule MATCH: %s PID: %s NAME: %s CMD:%" % ( match, pid, name, cmd), Fore.WHITE
+					print Fore.RED, "\bSKELETONKEY Yara Rule MATCH: %s PID: %s NAME: %s CMD: %s" % ( match, pid, name, cmd), Fore.WHITE
 					compromised = True			
 		except Exception, e:
 			print Fore.MAGENTA, "Error while process memory Yara check (maybe the process doesn't exist anymore or access denied). PID: %s NAME: %s" % ( pid, name), Fore.WHITE
