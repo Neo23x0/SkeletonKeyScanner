@@ -1,3 +1,11 @@
+# Obsolete
+
+The two specialiced scanners [Regin Scanner](https://github.com/Neo23x0/ReginScanner) and [Skeleton Key Scanner](https://github.com/Neo23x0/SkeletonKeyScanner) have been merged into a new generic IOC scanner called [LOKI](https://github.com/Neo23x0/Loki). 
+
+LOKI features a completely free IOC signature definition via different configuration files. It includes signatures for Regin, Skeleton Key and the recently published [FiveEyes QUERTY malware](http://www.spiegel.de/media/media-35668.pdf) mentioned in the [Spiegel report](http://www.spiegel.de/international/world/new-snowden-docs-indicate-scope-of-nsa-preparations-for-cyber-battle-a-1013409.html) released on 17.01.2015.
+
+LOKI is free for private and commercial use and published under the GPL. He is the little brother of [THOR](http://www.bsk-consulting.de/apt-scanner-thor/), our full featured corporate APT Scanner.  
+
 # Skeleton Key Malware Scanner
 
 Scanner for Skeleton Key Malware
